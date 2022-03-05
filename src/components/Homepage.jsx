@@ -4,36 +4,39 @@ import {Typography, Row, Col, Statistic} from 'antd';
 import {Link} from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
-import { Cryptocurrencies , News} from '.';
+// import { Cryptocurrencies , News} from '.';
+import Cryptocurrencies from './Cryptocurrencies';
+import News from './News';
+
 import Loader from './Loader';
 
 const { Title }= Typography;
 
 const Homepage = () => {
-       const {data, isFetching} = useGetCryptosQuery(10);
+       const { data, isFetching } = useGetCryptosQuery();
        const globalStats = data?.data?.stats;
 
        if(isFetching) return <Loader/>;
-        //  console.log(data);
+         console.log(data);
 
     return (
         <>
           <Title level={2} className="heading">Global Crypto Stats</Title>
           <Row>
               <Col span={12}>
-                  <Statistic title="Total Cryptocurrencies" value={globalStats.total}/>
+                  <Statistic title="Total Cryptocurrencies" value='13129'/>
               </Col>
               <Col span={12}>
-                  <Statistic title="Total Exchanges" value={globalStats.totalExchanges}/>
+                  <Statistic title="Total Exchanges" value='170'/>
               </Col>
               <Col span={12}>
-                  <Statistic title="Total Market Cap" value={millify(globalStats.totalMarketCap)}/>
+                  <Statistic title="Total Market Cap" value='$20.8T'/>
               </Col>
               <Col span={12}>
-                  <Statistic title="Total 24-hour Volume" value={millify(globalStats.total24hVolume)}/>
+                  <Statistic title="Total 24-hour Volume" value='$7.6B'/>
               </Col>
               <Col span={12}>
-                  <Statistic title="Total Markets" value={millify(globalStats.totalMarkets)}/>
+                  <Statistic title="Total Markets" value='25663'/>
               </Col>
           </Row>
 
@@ -54,4 +57,4 @@ const Homepage = () => {
     )
 }
 
-export default Homepage
+export default Homepage;

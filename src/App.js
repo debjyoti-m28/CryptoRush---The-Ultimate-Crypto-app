@@ -39,7 +39,7 @@ const App = () => {
              <div className="footer" >
                  <Typography.Title level={5} style={{color:'white', textAlign:'center'}}>
                      CryptoRush <br/>
-                     All Rights Reserved <Typography.Title level={5} style={{color:'grey', textAlign:'center'}}>Copyright 2021 @Debjyoti Mondal</Typography.Title>
+                     All Rights Reserved <Typography.Title level={5} style={{color:'grey', textAlign:'center'}}>Copyright 2022 @Debjyoti Mondal</Typography.Title>
                  </Typography.Title>
                  <Space>
                      <Link to="/">Home</Link>
